@@ -9,23 +9,36 @@
 
 .code { font-family: monospace; border: 1px solid #DDD; margin: 6px; padding: 6px; background-color: #EEE; }
 .topbar { z-index: 0; }
+.reddit { position: absolute; top: 4px; right: 10px;}
+.facebook { position: absolute; top: 4px; right: 110px; }
 
 	</style>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=195123500559830";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">SOPA Blackout</a>
+          <a class="brand" href="/">SOPA Blackout</a>
           <ul class="nav">
             <li class="active"><a href="/">Home</a></li>
             <li><a href="/learnmore">About SOPA/PIPA</a></li>
-            <li><a href="/contact">Contact Your Representative</a></li>
+            <li><a href="https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173">Contact Your Representative</a></li>
           </ul>
           <form action="" class="pull-right">
-            <input class="input-small" type="text" placeholder="Username">
-            <input class="input-small" type="password" placeholder="Password">
-            <button class="btn" type="submit">Sign in</button>
+              <div class="facebook">
+                  <div class="fb-like" data-href="https://www.facebook.com/pages/SOPA-Blackout-Day-January-18th/206976709396372" data-send="true" data-layout="button_count" data-width="110" data-show-faces="true"></div>
+              </div>
+              <div class="reddit">
+                  <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
+              </div>
           </form>
         </div>
       </div>
@@ -37,10 +50,11 @@
           <h1>Page name <small>Supporting text or tagline</small></h1>
         </div>
         <div class="row">
-          <div class="span10">
-		<h1>SOPA Blackout JS Library</h1>
+          <div class="span16">
+              <h3>Join us on <span style="color: #0069D6;">January 18th</span> by blacking out your homepage or site with a simple and easy to use</h3>
+		<h1>SOPA Blackout JS Utility</h1>
 		<p>
-		Earlier today, Reddit.com announced that they would be blacking out their
+		Earlier this week, Reddit.com announced that they would be blacking out their
 		site on January 18th. Likewise, many of us should take similar action versus
 		this bill. The damage it would cause to our internet infrastructure would be
 		irreparable. What we propose is a simple, but effective message for any
@@ -57,13 +71,10 @@
 			&lt;script type="text/javascript" src="//sopablackout.org/sopablackout.js"&gt;&lt;/script&gt;
 		</p>
           </div>
-          <div class="span4">
-            <h3>Secondary content</h3>
-          </div>
         </div>
       </div>
 
       <footer>
-        <p>&copy; Company 2011</p>
+          <p>Created by <a href="http://twitter.com/sirpengi">@sirpengi</a> and <a href="https://plus.google.com/102298893934180954349/posts">Jacob Miller</a></p>
       </footer>
 </body>

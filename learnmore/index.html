@@ -9,42 +9,57 @@
 .code { font-family: monospace; border: 1px solid #DDD; margin: 6px; padding: 6px; background-color: #EEE; }
 ul, li { color: #404040; }
 li strong { font-size: 16px; }
+.reddit { position: absolute; top: 4px; right: 10px;}
+.facebook { position: absolute; top: 4px; right: 110px; }
 
 	</style>
 </head>
 <body>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1&appId=195123500559830";
+        fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
     <div class="topbar">
       <div class="fill">
         <div class="container">
-          <a class="brand" href="#">SOPA Blackout</a>
+          <a class="brand" href="/">SOPA Blackout</a>
           <ul class="nav">
             <li><a href="/">Home</a></li>
             <li class="active"><a href="/learnmore">About SOPA/PIPA</a></li>
             <li><a href="https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173">Contact Your Representative</a></li>
           </ul>
           <form action="" class="pull-right">
-            <input class="input-small" type="text" placeholder="Username">
-            <input class="input-small" type="password" placeholder="Password">
-            <button class="btn" type="submit">Sign in</button>
+              <div class="facebook">
+                  <div class="fb-like" data-href="https://www.facebook.com/pages/SOPA-Blackout-Day-January-18th/206976709396372" data-send="true" data-layout="button_count" data-width="110" data-show-faces="true"></div>
+              </div>
+              <div class="reddit">
+                  <script type="text/javascript" src="http://www.reddit.com/static/button/button1.js"></script>
+              </div>
           </form>
         </div>
       </div>
     </div>
     <div class="container">
-
       <div class="content">
         <div class="page-header">
           <h1>Page name <small>Supporting text or tagline</small></h1>
         </div>
         <div class="row">
-          <div class="span10">
+            <iframe src="http://player.vimeo.com/video/31100268?title=0&byline=0&portrait=0" width="960" height="460" frameborder="0" webkitAllowFullScreen allowFullScreen></iframe>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+          <div class="span12">
 		<h2>What is SOPA?</h2>
                 <p>
                 The <strong>Stop Online Piracy Act</strong> (SOPA, H.R. 3261) is on the surface a bill that attempts to curb online piracy. Sadly, the proposed way it goes about doing this would devastate the online economy and the overall freedom of the web. It would particularly affect sites with heavy user generated content. Sites like Youtube, Reddit, Twitter, and others may cease to exist in their current form if this bill is passed. 
                 </p>
 		<h2>What is PIPA?</h2>
                 <p>
-                The <strong>Protect IP Act</strong> (PIPA, S. 968) is SOPA's twin in the Senate. Under current DMCA law, if a user uploads a copyrighted movie to sites like Youtube, the site isn't held accountable so long as they provide a way to report user infringement. The user who uploaded the movie is held accountable for their actions, not the site. PIPA would change that - it would place the blame on the site itself, and would also provide a way for copyright holders to sieze the site's domain in extreme circumstances.  
+                The <strong>Protect IP Act</strong> (PIPA, S. 968) is SOPA's twin in the Senate. Under current DMCA law, if a user uploads a copyrighted movie to sites like Youtube, the site isn't held accountable so long as they provide a way to report user infringement. The user who uploaded the movie is held accountable for their actions, not the site. PIPA would change that - it would place the blame on the site itself, and would also provide a way for copyright holders to seize the site's domain in extreme circumstances.  
                 </p>
 
                 <p>The Electronic Frontier Foundation laid out four excellent points as to why the bills are not only dangerous, but are also not effective for what they are trying to accomplish:</p>
@@ -63,6 +78,6 @@ li strong { font-size: 16px; }
       </div>
 
       <footer>
-        <p>&copy; Company 2011</p>
+          <p>Created by <a href="http://twitter.com/sirpengi">@sirpengi</a> and <a href="https://plus.google.com/102298893934180954349/posts">Jacob Miller</a></p>
       </footer>
 </body>

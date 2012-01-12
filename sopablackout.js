@@ -90,12 +90,6 @@
 				width: '100%',
 				backgroundColor: 'black',
 				textAlign: 'center',
-<<<<<<< HEAD
-				height: height,
-				color: '#999'},
-			create('h1', {color: '#999', paddingTop: '10px'}, txt(SopaBlackout.HEADER_TEXT)),
-			txt("Keep the web open. "),
-=======
 				paddingTop: '10px',
 				zIndex: Number.MAX_VALUE,
 				height: height,
@@ -103,7 +97,6 @@
 			create('h1', {color: '#999'}, txt(SopaBlackout.HEADER_TEXT)),
 			create('p', null,
 				txt("Keep the web open. "),
->>>>>>> 37d8a16c78db6b31b5cf540278dc89453fec88fe
 			create('a', {href: "https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173"}, txt("Contact your representatives")),
 				txt(" or "),
 				create('a', {href: "http://sopablackout.org/learnmore"}, txt("find out more")))

@@ -97,7 +97,7 @@
 			create('h1', {color: '#999'}, txt(SopaBlackout.HEADER_TEXT)),
 			create('p', null,
 				txt("Keep the web open. "),
-				create('a', {href: "http://sopablackout.org/contact"}, txt("Contact your representatives")),
+			create('a', {href: "https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173"}, txt("Contact your representatives")),
 				txt(" or "),
 				create('a', {href: "http://sopablackout.org/learnmore"}, txt("find out more")))
 		);

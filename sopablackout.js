@@ -70,8 +70,8 @@
 	SopaBlackout.VERSION = '0.1.0';
 	SopaBlackout.MIN_HEIGHT = 100;
 	SopaBlackout.HEADER_TEXT = "This is what the web could look like under the Stop Online Piracy Act.";
-        SopaBlackout.CONTINUE_TEXT = "(click anywhere to continue)";
-	SopaBlackout.blackout = function(obj_id){
+	SopaBlackout.CONTINUE_TEXT = "(click anywhere to continue)";
+	SopaBlackout.blackout = function(obj_id, srsbzns){
 		var obj;
 		var body = document.body;
 		if (obj_id === false){
@@ -91,29 +91,28 @@
 				backgroundColor: 'black',
 				textAlign: 'center',
 				paddingTop: '10px',
+				zIndex: Number.MAX_VALUE,
 				height: height,
 				color: '#999'},
 			create('h1', {color: '#999'}, txt(SopaBlackout.HEADER_TEXT)),
-			txt("Keep the web open. "),
+			create('p', null,
+				txt("Keep the web open. "),
 			create('a', {href: "https://wfc2.wiredforchange.com/o/9042/p/dia/action/public/?action_KEY=8173"}, txt("Contact your representatives")),
-			txt(" or "),
-			create('a', {href: "http://sopablackout.org/learnmore"}, txt("find out more")),
-                        create('p', {paddingTop: '250px', color: '#333'}, txt(SopaBlackout.CONTINUE_TEXT))
-
-		)
-
-		addEvent(blackout, 'click', function(e){
-			body.removeChild(blackout);
-		});
-
+				txt(" or "),
+				create('a', {href: "http://sopablackout.org/learnmore"}, txt("find out more")))
+		);
+		if (srsbzns !== true){
+			blackout.appendChild(create('p', {paddingTop: '250px', color: '#333'}, txt(SopaBlackout.CONTINUE_TEXT)));
+			addEvent(blackout, 'click', function(e){
+				body.removeChild(blackout);
+			});
+		}
 		body.appendChild(blackout);
 	};
 	SopaBlackout.go = function(){
-		if (typeof spoablackout_id === 'undefined'){
-			SopaBlackout.blackout(false);
-		}else{
-			SopaBlackout.blackout(sopablackout_id);
-		}
+		var obj_id = (typeof sopablackout_id === 'undefined') ? false : sopablackout_id;
+		var srsbzns = (typeof sopablackout_srsbzns === 'undefined') ? false : sopablackout_srsbzns;
+		SopaBlackout.blackout(obj_id, srsbzns);
 	};
 
 	onDomReady(SopaBlackout.go);

@@ -13,18 +13,37 @@
 			obj.attachEvent("on"+type, obj[type+fn]);
 		}
 	};
+	// Thanks http://javascript.nwbox.com/IEContentLoaded/
+	// for this
+	var IEContentLoaded = function(w, fn) {
+		var d = w.document, done = false,
+		init = function () {
+			if (!done) {
+				done = true;
+				fn();
+			}
+		};
+		(function () {
+			try {
+				d.documentElement.doScroll('left');
+			} catch (e) {
+				setTimeout(arguments.callee, 50);
+				return;
+			}
+			init();
+		})();
+		d.onreadystatechange = function() {
+			if (d.readyState == 'complete') {
+				d.onreadystatechange = null;
+				init();
+			}
+		};
+	}
 	var onDomReady = function(fn){
 		if (document.addEventListener){
 			document.addEventListener('DOMContentLoaded', fn, false);
 		}else{
-			if (!document.uniqueID && document.expando){return;};
-			var tempNode = document.createElement('document:ready');
-			try{
-				tempNode.doScroll('left');
-				fn();
-			}catch (err){
-				setTimeout(arguments.callee, 0);
-			}
+			IEContentLoaded(window, fn);
 		}
 	};
 	var getStyle = function(e, prop){

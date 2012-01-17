@@ -90,6 +90,7 @@
 	SopaBlackout.MIN_HEIGHT = 100;
 	SopaBlackout.HEADER_TEXT = "This is what the web could look like under the Stop Online Piracy Act.";
 	SopaBlackout.CONTINUE_TEXT = "(click anywhere to continue)";
+	SopaBlackout.ZINDEX = Math.pow(2, 31) - 2;
 	SopaBlackout.blackout = function(obj_id, srsbzns){
 		var obj;
 		var body = document.body;
@@ -110,7 +111,7 @@
 				backgroundColor: 'black',
 				textAlign: 'center',
 				paddingTop: '10px',
-				zIndex: Number.MAX_VALUE,
+				zIndex: SopaBlackout.ZINDEX,
 				height: height,
 				color: '#999'},
 			create('h1', {color: '#999'}, txt(SopaBlackout.HEADER_TEXT)),

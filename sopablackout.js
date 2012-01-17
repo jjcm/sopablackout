@@ -104,7 +104,7 @@
 		return true;
 	};
 
-	SopaBlackout.VERSION = '0.1.0';
+	SopaBlackout.VERSION = '0.2.0';
 	SopaBlackout.MIN_HEIGHT = 100;
 	SopaBlackout.HEADER_TEXT = "This is what the web could look like under the Stop Online Piracy Act.";
 	SopaBlackout.CONTINUE_TEXT = "(click anywhere to continue)";
